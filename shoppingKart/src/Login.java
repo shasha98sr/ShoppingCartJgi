@@ -1,44 +1,51 @@
-
 import java.io.*;
-import java.sql.*;
-import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import javax.servlet.*;
+import java.sql.*;
 
-@WebServlet("/Login")
+import javax.servlet.http.HttpSession; 
+
 public class Login extends HttpServlet {
+
+
 	private static final long serialVersionUID = 1L;
-       
-	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	    {
-		 response.setContentType("text/html");
-	        PrintWriter out = response.getWriter();
-	        String UserName = request.getParameter("first_name");
-	        String password = request.getParameter("password");
-	        try 
-	        {
-	            Class.forName("com.mysql.cj.jdbc.Driver");
-	            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/miniproject", "root", "admin");
-	            PreparedStatement pst = conn.prepareStatement("Select first_name,password from users where first_name=? and password=?");
-	            pst.setString(1 ,UserName);
-	            pst.setString(2, password);
-	            ResultSet rs = pst.executeQuery();
-	            if (rs.next()) 
-	            {
-	                out.println("Correct login credentials" + UserName);
-	            } 
-	            else
-	            {
-	                out.println("Incorrect login credentials");
-	            }
-	        } 
-	        catch (ClassNotFoundException | SQLException e) 
-	        {
-	            e.printStackTrace();
-	        }
-	    }
-            
-            
+	String name;
+	
 
- 	    }
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+    {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        String uname = request.getParameter("uname");
+        String pass = request.getParameter("pass");
+       // String name = request.getParameter("name");
+        HttpSession session=request.getSession();  
+        if(session!=null)
+		name=(String)session.getAttribute("uname"); 
+        try 
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shoplogin", "root", "");
+            PreparedStatement pst = conn.prepareStatement("Select uname,pass from login where uname=? and pass=?");
+            pst.setString(1, uname);
+            pst.setString(2, pass);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) 
+            {   
+                out.print("<html><body><h1>Hello, "+uname+" Welcome to Profile</h1></body></html>"); 
+                
+                
+            } 
+            else
+            {
+            	out.print("<h1 style='text-align:center'>Sorry UserName or Password Error!</h1>");  
+                RequestDispatcher rd=request.getRequestDispatcher("/signin.html");  
+                rd.include(request, response);  
+            }
+        } 
+        catch (ClassNotFoundException | SQLException e) 
+        {
+            e.printStackTrace();
+        }
+    }
+}

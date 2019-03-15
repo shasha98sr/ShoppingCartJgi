@@ -1,4 +1,9 @@
- /* Basics */
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+ <style>
+        /* Basics */
         html, body
         {
             padding: 0;
@@ -89,3 +94,26 @@
             cursor: pointer;
         }
       
+    </style>
+</head>
+<body>
+<form method="post" action="Login">  
+    <div class="logincontent">
+        <div class="loginheading">
+            Login
+        </div>
+        <label for="txtUserName">
+            Username:</label>
+        <input type="text" id="txtUserName" name="uname" />
+        <label for="txtPassword">
+            Password:</label>
+        <input type="password" id="txtPassword" name="pass" />
+        <div class="loginremember">
+            <input type="checkbox" id="chbRemember" name="chbRemember" /><label class="check"
+                for="chbRemember">Remember me next time</label>
+            <input type="submit" class="loginbtn" value="Login" id="btnSubmit" />
+        </div>
+    </div>
+    </form>
+</body>
+</html>
