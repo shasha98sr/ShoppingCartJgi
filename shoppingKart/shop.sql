@@ -1,49 +1,18 @@
 
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `shoplogin`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
-
-CREATE TABLE `login` (
-  
-  `uname` varchar(30) NOT NULL,
-  `pass` varchar(30) NOT NULL,
-  `name` varchar(30) NOT NULL
-  
-) 
 
 
 
+DROP DATABASE shoplogin;
 
 
--- --------------------------------------------------------
 
---
--- Table structure for table `login`
---
+CREATE DATABASE shoplogin;
 
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`uname`);
 
-COMMIT;
+CREATE TABLE login (uname varchar(30) , pass varchar(30) , name varchar(30) ); 
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ALTER TABLE `login`ADD PRIMARY KEY (`uname`);
+
+INSERT INTO login VALUES('abc','nayan','123'); 
+

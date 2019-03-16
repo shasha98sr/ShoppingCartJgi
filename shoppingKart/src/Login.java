@@ -45,7 +45,8 @@ public class Login extends HttpServlet {
         } 
         catch (ClassNotFoundException | SQLException e) 
         {
-            e.printStackTrace();
+        	out.println("Couldn't load database driver: " 
+        		  + e.getMessage());
         }
     }
 }
