@@ -45,7 +45,8 @@ public class User extends HttpServlet {
 	            pst.setString(2, pass);
 	            pst.setString(3, name);
 	            pst.executeUpdate();
-	            out.print("Done");
+	            RequestDispatcher rd=request.getRequestDispatcher("frames.html");  
+                rd.include(request, response); 
 	            
 	        }
 	        catch (ClassNotFoundException | SQLException e) 

@@ -32,13 +32,14 @@ public class Login extends HttpServlet {
             ResultSet rs = pst.executeQuery();
             if (rs.next()) 
             {   
-                out.print("<html><body><h1>Hello, "+uname+" Welcome to Profile</h1></body></html>"); 
+            	RequestDispatcher rd=request.getRequestDispatcher("/frames.html");  
+                rd.include(request, response); 
                 
                 
             } 
             else
             {
-            	out.print("<h1 style='text-align:center'>Sorry UserName or Password Error!</h1>");  
+            	out.print("<h1 style='text-align:center;color:#757677;'>Sorry UserName or Password Error!</h1>");  
                 RequestDispatcher rd=request.getRequestDispatcher("/signin.html");  
                 rd.include(request, response);  
             }
@@ -48,5 +49,6 @@ public class Login extends HttpServlet {
         	out.println("Couldn't load database driver: " 
         		  + e.getMessage());
         }
+         
     }
 }

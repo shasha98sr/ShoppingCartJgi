@@ -9,7 +9,6 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/Login</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>User</servlet-name>
     <servlet-class>User</servlet-class>
@@ -18,12 +17,18 @@
     <servlet-name>User</servlet-name>
     <url-pattern>/User</url-pattern>
   </servlet-mapping>
-  
+   <servlet>
+    <servlet-name>Cart</servlet-name>
+    <servlet-class>Cart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cart</servlet-name>
+    <url-pattern>/Cart</url-pattern>
+  </servlet-mapping>
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
-
 </web-app>

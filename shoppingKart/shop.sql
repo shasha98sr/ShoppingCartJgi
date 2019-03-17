@@ -16,3 +16,6 @@ ALTER TABLE `login`ADD PRIMARY KEY (`uname`);
 
 INSERT INTO login VALUES('abc','nayan','123'); 
 
+CREATE TABLE cart (pname varchar(30),qty varchar(2),price varchar(10));
+
+

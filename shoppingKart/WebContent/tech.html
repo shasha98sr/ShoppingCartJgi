@@ -1,14 +1,196 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="ISO-8859-1">
+	
+		<script type="text/javascript">
+			  
+	 function calc(a,b,c)
+	 {
+		//alert(a+" "+b+" "+c);
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.open("POST",Cart,true);
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		http.onreadystatechange = function() {//Call a function when the state changes.
+		  if(http.readyState == 4 && http.status == 200) {
+		      alert(http.responseText);
+		  }
+		  else
+			  alert(a+" "+b+" "+c);
+		}
+		 //alert(a+" "+b+" "+c);
+		xmlhttp.send(a,b,c);
+		
+	 }
+</script>
+		<style>
+* {
+  box-sizing: border-box;
+}
+ body
+        {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: verdana;
+            background-image:url("images/4.png"); 
+			background-color: #303133;"
+			height: 100%; 
+			width:100%;
+  			background-repeat: no-repeat;
+  			background-size: cover;
+        }
+.column {
+	 position: relative;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.loginbtn
+        {
+            float: center;
+            margin-right: 20px;
+            margin-top: 20px;
+            padding: 3px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #80ce4c;
+          
+            border-radius: 30px;
+            border: 1px solid #641E16;
+            cursor: pointer;
+        }
+        .qty{width:15px;}
+
+.text-block {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 15px;
+  padding: 20px;
+  text-align: center;
+}
+.imag{
+  width: 100%;
+  height: auto;
+}
+.column:hover .text-block {
+  opacity: 1;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 7px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #757677; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #303133; 
+}
+
+</style>
+
+	
 
 	</head>
 	<body>
-		<div>
-			<h3>Mobile Phones</h3><br><br>
-			
-			
-		</div>
+	<div align="center"><h1>Mobile Phones</h1></div>
+		<div class="row">
+  			<div class="column">
+   			<img src="images/galaxy.jpg" alt="galaxy" class="imag" id="Samsung" style="width:100%">
+   			<div class="text-block"><form method="post" action="Cart">
+    		<h4>Samsung galaxy S10</h4>
+    		<p style="color:#cac9cc;">Memory: 8GB RAM | 128GB ROM<br>
+			Display: 6.1 inch<br>
+			Camera: 16MP + 12MP + 12MP | 10MP<br>
+			Processor: Exynos 9 9820<br>
+			Battery: 3400 mAh<br>
+			Price: <b>66900</b>rs<br/>Quantity:&nbsp;&nbsp;
+		<input type="hidden" id="pname" name="pname" value="Samsung Galaxy s10">
+			<input type="text" class="qty" id="qty" value="1"/></p>
+			<input type="hidden" id="price" name="price" value="16900">
+			<input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   />
+			</form></div>
+  			</div>
+  		<div class="column">
+    		<img src="images/redmi.jpg" alt="redmi" class="imag" id="Xiaomi" style="width:100%">
+    		<div class="text-block"><form method="post" action="Cart">
+    		<h4>Xiaomi Redmi note 7 pro</h4>
+    		<p style="color:#cac9cc;">Memory: 4GB RAM | 64GB ROM<br>
+			Display: 6.3 inch<br>
+			Camera: 48MP + 5MP | 13MP<br>
+			Processor: Qualcomm Snapdragon 675<br>
+			Battery: 4000 mAh<br>
+			Price: <b>13999</b>rs<br/>Quantity:&nbsp;&nbsp;
+			<input type="hidden" id="pname" name="pname" value="Xiaomi Redmi note 7 pro">
+			<input type="text" class="qty" id="qty" value="1"/></p>
+			<input type="hidden" id="price" name="price" value="13999">
+			<input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   />
+			</form></div>
+    		
+  		</div></div></div>
+  		<div class="row">
+  			<div class="column">
+    		<img src="images/k1.jpg" alt="oppo" class="imag" id="Oppo" style="width:100%">
+    		<div class="text-block"><form method="post" action="Cart">
+    		<h4>Oppo K1</h4>
+    		<p style="color:#cac9cc;">Memory: 4GB RAM | 64GB ROM<br>
+			Display:6.41 inch AMOLED<br>
+			Camera: 16MP + 2MP | 25MP<br>
+			Processor: Qualcomm Snapdragon 660 Octa Core<br>
+			Battery: 3600 mAh<br>
+			Price: <b>16900</b>rs<br/>Quantity:&nbsp;&nbsp;
+			<input type="hidden" id="pname" name="pname" value="Oppo K1">
+			<input type="text" class="qty" id="qty" value="1"/></p>
+			<input type="hidden" id="price" name="price" value="16900">
+			<input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   />
+			</form></div>
+  			</div>
+  			<div class="column">
+    		<img src="images/nokia.png" alt="nokia" class="imag" id="Nokia" style="width:100%">
+    		<div class="text-block"><form method="post" action="Cart"> 
+    		<h4>Nokia 216</h4>
+    		<p style="color:#cac9cc;">Memory:16MB RAM | 16MB ROM<br>
+			Display:2.4 inch<br>
+			Camera: 0.3MP Rear<br>
+			Battery: 1020 mAh<br>
+			Price: <b>2599</b>rs<br/>Quantity:&nbsp;&nbsp;
+			<input type="hidden" id="pname" name="pname" value="Nokia 216">
+			<input type="text" class="qty" id="qty" value="1"/></p>
+			<input type="hidden" id="price" name="price" value="2599">
+			<input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   />
+			</form></div>
+  			</div>
+  			</div>
+	
+
+	
 	</body>
 </html>
