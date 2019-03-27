@@ -10,10 +10,25 @@ img {vertical-align: middle;}
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
+  float: right;
   position: relative;
   margin: auto;
 }
 
+body
+        {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-family: verdana;
+            
+			background-color: #303133;"
+			height: 100%; 
+			width:100%;
+  			background-repeat: no-repeat;
+  			background-size: cover;
+        }
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -41,42 +56,65 @@ img {vertical-align: middle;}
   background-color: #f1f1f1;
   color: black;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+ overflow: auto;
+  padding: 8px 40px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
 </style>
 </head>
 <body style="background-color: #303133">
+
+<ul>
+	
+  <li><a class="active" href="pre.html">Home</a></li>
+  <li><a href="tech.html">Technology Corner</a></li>
+  <li><a href="fashion.html">Fashion Corner</a></li>
+  <li><a href="#cart">My Cart</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
 <div class="slideshow-container">
   <div class="mySlides1">
-    <img src="images/1.png" style="width:100%; height:400px">
+    <img src="images/1.png" style="width:100%; height:100%">
   </div>
 
   <div class="mySlides1">
-    <img src="images/2.png" style="width:100%; height:400px">
+    <img src="images/2.png" style="width:100%; height:100%">
   </div>
 
   <div class="mySlides1">
-    <img src="images/3.png" style="width:100%; height:400px">
+    <img src="images/3.png" style="width:100%; height:100%">
   </div>
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
   <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 </div>
 
-<div class="slideshow-container">
-  <div class="mySlides2">
-    <img src="images/4.png" style="width:100%">
-  </div>
-
-  <div class="mySlides2">
-    <img src="images/5.png" style="width:100%">
-  </div>
-
-  <div class="mySlides2">
-    <img src="images/1.png" style="width:100%">
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-</div>
 
 <script>
 var slideIndex = [1,1];

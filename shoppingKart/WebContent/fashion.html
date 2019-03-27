@@ -2,27 +2,7 @@
 <html>
 	<head>
 	
-		<script type="text/javascript">
-			  
-	 function calc(a,b,c)
-	 {
-		//alert(a+" "+b+" "+c);
-		xmlhttp=new XMLHttpRequest();
-		xmlhttp.open("POST",Cart,true);
-		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-		http.onreadystatechange = function() {//Call a function when the state changes.
-		  if(http.readyState == 4 && http.status == 200) {
-		      alert(http.responseText);
-		  }
-		  else
-			  alert(a+" "+b+" "+c);
-		}
-		 //alert(a+" "+b+" "+c);
-		xmlhttp.send(a,b,c);
 		
-	 }
-</script>
 		<style>
 * {
   box-sizing: border-box;
@@ -34,22 +14,20 @@
             width: 100%;
             height: 100%;
             font-family: verdana;
-            background-image:url("images/4.png"); 
+            background-image:url("images/b1.jpg"); 
 			background-color: #303133;"
 			height: 100%; 
 			width:100%;
   			background-repeat: no-repeat;
   			background-size: cover;
         }
-        
-        .content {
+             .content {
   max-width: 1000px;
   float: right;
   position: relative;
   margin: auto;
 }
-        
-        
+  
 .column {
 	 position: relative;
   float: left;
@@ -97,7 +75,7 @@
 }
 .imag{
   width: 100%;
-  height: 100%;
+  height:100%;
   opacity:0.8;
 }
 .column:hover .text-block {
@@ -159,87 +137,94 @@ li a:hover:not(.active) {
 
 	</head>
 	<body>
+	
 	<ul>
   <li><a  href="pre.html">Home</a></li>
-  <li><a class="active" href="tech.html">Technology Corner</a></li>
-  <li><a  href="fashion.html">Fashion Corner</a></li>
+  <li><a  href="tech.html">Technology Corner</a></li>
+  <li><a class="active" href="fashion.html">Fashion Corner</a></li>
   <li><a href="#cart">My Cart</a></li>
   <li><a href="#about">About</a></li>
 </ul>
 	<div class="content">
-	<div align="center"><h1>Mobile Phones</h1></div>
+	<div align="center"><h1>Fashion Corner</h1></div>
 		<div class="row">
   			<div class="column">
-   			<img src="images/galaxy.jpg" alt="galaxy" class="imag" id="Samsung" style="width:100%">
+   			<img src="images/shoe1.jpg" alt="Tommmy Hilfiger" class="imag" id="shoe" style="width:100%">
    			<div class="text-block"><form method="post" action="Cart">
-    		<h4>Samsung galaxy S10</h4>
-    		<p style="color:#cac9cc;">Memory: 8GB RAM | 128GB ROM<br>
-			Display: 6.1 inch<br>
-			Camera: 16MP + 12MP + 12MP | 10MP<br>
-			Processor: Exynos 9 9820<br>
-			Battery: 3400 mAh<br>
-			Price: <b>66900</b>rs<br/>Quantity:&nbsp;&nbsp;
-		<input type="hidden" id="pname" name="pname" value="Samsung Galaxy s10">
-			<input type="hidden" id="pagename" name="pagename" value="tech.html">
+    		<h4>Tommmy Hilfiger<br/>Navy blue Suede Sneakers</h4>
+    		<p style="color:#cac9cc;">Material: Suede<br>
+			Insole: Comfort Insole<br>
+			Pattern: Solid<br>
+			Warranty: Sneakers<br>
+			Ankle height: Regular<br>
+			Product Code: 74596</br>
+			Price: <b>7599</b>rs<br/>Quantity:&nbsp;&nbsp;
+		<input type="hidden" id="pname" name="pname" value="Tommy Hilfiger Sneaker">
 			<input type="text" class="qty" id="qty" value="1"/></p>
-			<input type="hidden" id="price" name="price" value="16900">
-			<a href="desc.html" target="desc"><input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   /></a>
+			<input type="hidden" id="pagename" name="pagename" value="fashion.html">
+			<input type="hidden" id="price" name="price" value="7599">
+			<input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   />
 			</form></div>
   			</div>
   		<div class="column">
-    		<img src="images/redmi.jpg" alt="redmi" class="imag" id="Xiaomi" style="width:100%">
+    		<img src="images/lavie1.jpg" alt="lavie" class="imag" id="Bag" style="width:100%">
     		<div class="text-block"><form method="post" action="Cart">
-    		<h4>Xiaomi Redmi note 7 pro</h4>
-    		<p style="color:#cac9cc;">Memory: 4GB RAM | 64GB ROM<br>
-			Display: 6.3 inch<br>
-			Camera: 48MP + 5MP | 13MP<br>
-			Processor: Qualcomm Snapdragon 675<br>
-			Battery: 4000 mAh<br>
-			Price: <b>13999</b>rs<br/>Quantity:&nbsp;&nbsp;
-			<input type="hidden" id="pname" name="pname" value="Xiaomi Redmi note 7 pro">
-			<input type="hidden" id="pagename" name="pagename" value="tech.html">
+    		<h4>Lavie<br>Grey Textured Shoulder Bag</h4>
+    		<p style="color:#cac9cc;">
+			Type: Shoulder Bag<br>
+			Compartment Closure: Zip<br>
+			Size: Regular<br>
+			Handles: Two Handles<br>
+			Product Code: 22596<br>
+			Print or Pattern Type: Geometric<br>
+			Price: <b>1298</b>rs<br/>Quantity:&nbsp;&nbsp;
+			<input type="hidden" id="pname" name="pname" value="Lavie Shoulder Bag">
 			<input type="text" class="qty" id="qty" value="1"/></p>
-			<input type="hidden" id="price" name="price" value="13999">
+			<input type="hidden" id="pagename" name="pagename" value="fashion.html">
+			<input type="hidden" id="price" name="price" value="1298">
 			<input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   />
 			</form></div>
     		
   		</div></div>
   		<div class="row">
   			<div class="column">
-    		<img src="images/k1.jpg" alt="oppo" class="imag" id="Oppo" style="width:100%">
+    		<img src="images/fastrack1.jpg" alt="Fastrack Watch" class="imag" id="Watch" style="width:100%">
     		<div class="text-block"><form method="post" action="Cart">
-    		<h4>Oppo K1</h4>
-    		<p style="color:#cac9cc;">Memory: 4GB RAM | 64GB ROM<br>
-			Display:6.41 inch AMOLED<br>
-			Camera: 16MP + 2MP | 25MP<br>
-			Processor: Qualcomm Snapdragon 660 Octa Core<br>
-			Battery: 3600 mAh<br>
-			Price: <b>16900</b>rs<br/>Quantity:&nbsp;&nbsp;
-			<input type="hidden" id="pname" name="pname" value="Oppo K1">
+    		<h4>Fastrack<br>38040PP01 Trendies Watch - For Men</h4>
+    		<p style="color:#cac9cc;">Water Resistant: Yes<br>
+			Display Type: Analog<br>
+			Series: Trendies<br>
+			Watch Type: Wrist Watch<br>
+			Case/Bezel Material: Plastic<br>
+			Product Code: 74666<br>
+			Price: <b>1450</b>rs<br/>Quantity:&nbsp;&nbsp;
+			<input type="hidden" id="pname" name="pname" value="Fastrack Trendies Watch">
+			<input type="hidden" id="pagename" name="pagename" value="fashion.html">
 			<input type="text" class="qty" id="qty" value="1"/></p>
-			<input type="hidden" id="pagename" name="pagename" value="tech.html">
-			<input type="hidden" id="price" name="price" value="16900">
+			<input type="hidden" id="price" name="price" value="1450">
 			<input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   />
 			</form></div>
   			</div>
   			<div class="column">
-    		<img src="images/nokia.png" alt="nokia" class="imag" id="Nokia" style="width:100%">
+    		<img src="images/hrx1.jpg" alt="hrx jacket" class="imag" id="hrx" style="width:100%">
     		<div class="text-block"><form method="post" action="Cart"> 
-    		<h4>Nokia 216</h4>
-    		<p style="color:#cac9cc;">Memory:16MB RAM | 16MB ROM<br>
-			Display:2.4 inch<br>
-			Camera: 0.3MP Rear<br>
-			Battery: 1020 mAh<br>
-			Price: <b>2599</b>rs<br/>Quantity:&nbsp;&nbsp;
-			<input type="hidden" id="pname" name="pname" value="Nokia 216">
+    		<h4>HRX <br>Men Maroon Solid Sporty Jacket</h4>
+    		<p style="color:#cac9cc;">Material: 100% polyester<br>
+			Sleeve Length: Long Sleeves<br>
+			Collar: Mock Collar<br>
+			Length: Regular<br>
+			Type: Sporty Jacket<br>
+			Number of Pockets: 3<br>
+			Product Code: 74547<br>
+			Price: <b>1259</b>rs<br/>Quantity:&nbsp;&nbsp;
+			<input type="hidden" id="pname" name="pname" value="HRX Maroon Jacket">
+			<input type="hidden" id="pagename" name="pagename" value="fashion.html">
 			<input type="text" class="qty" id="qty" value="1"/></p>
-			<input type="hidden" id="pagename" name="pagename" value="tech.html">
-			<input type="hidden" id="price" name="price" value="2599">
+			<input type="hidden" id="price" name="price" value="1259"/>
 			<input type="submit" class="loginbtn" value="Add to Cart" id="btnSubmit"   />
 			</form></div>
   			</div>
-  			</div>
-  			</div>
+  			</div></div>
 	
 
 	

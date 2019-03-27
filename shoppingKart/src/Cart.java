@@ -24,7 +24,8 @@ public class Cart extends HttpServlet {
         String pname = request.getParameter("pname");
         String qty = request.getParameter("qty");
         String price = request.getParameter("price");
-        
+        String pagename = request.getParameter("pagename");
+        request.setAttribute("originalRequest", request.getRequestURL());
         
 
         try 
@@ -36,25 +37,24 @@ public class Cart extends HttpServlet {
             pst.setString(2, qty);
             pst.setString(3, price);
             pst.executeUpdate();
-            RequestDispatcher rd=request.getRequestDispatcher("tech.html");  
+            RequestDispatcher rd=request.getRequestDispatcher(pagename);  
             rd.include(request, response);
+         
+          out.print("<style>"
+            		+ "h3{text-align:center; padding:20px; background-color: #013802;"
+            		+ "color: white; position:absolute; top:400px !important;"
+            		+ "animation: fadeIn 6s;-webkit-animation: fadeIn 6s; animation-duration: 6s;animation-fill-mode: forwards;  }"
+            		+ "@keyframes fadeIn {from {opacity: 1;}to {opacity:0 ;}" 
+            		+"}"
+            		+ "</style>");
+             out.print("<div style='float:right'><h3>"+pname+" added to cart!</h3></div>"); 
         }
         catch (ClassNotFoundException | SQLException e) 
         {
         	out.println("Couldn't load database driver: " 
         			  + e.getMessage());
         }
-        finally {
-        	
-       out.print("<style>"
-       		+ "h3{text-align:center; padding:20px; background-color: #013802;"
-       		+ "color: white; position:absolute; top:400px !important;"
-       		+ "animation: fadeIn 6s;-webkit-animation: fadeIn 6s; animation-duration: 6s;animation-fill-mode: forwards; left:60%; }"
-       		+ "@keyframes fadeIn {from {opacity: 1;}to {opacity:0 ;}" 
-       		+"}"
-       		+ "</style>");
-        out.print("<div align='right'><h3>"+pname+" added to cart!</h3></div>");  
-        }
+        
 	}
 
 }

@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,15 +28,18 @@ public class User extends HttpServlet {
 
 	
 	
+	@SuppressWarnings("null")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 response.setContentType("text/html");
 	        PrintWriter out = response.getWriter();
 	        String uname = request.getParameter("UName");
 	        String pass = request.getParameter("Password");
 	        String name = request.getParameter("Name");
-	        HttpSession session=request.getSession();  
-	        if(session!=null)
-			
+	        HttpSession session=request.getSession();
+	        if((uname!="")&&(uname!="null")) {
+	        session.setAttribute("UsrName",uname);
+	        session.setAttribute("CusName",name);
+	        }
 	        try 
 	        {
 	            Class.forName("com.mysql.jdbc.Driver");
@@ -45,15 +49,18 @@ public class User extends HttpServlet {
 	            pst.setString(2, pass);
 	            pst.setString(3, name);
 	            pst.executeUpdate();
-	            RequestDispatcher rd=request.getRequestDispatcher("frames.html");  
-                rd.include(request, response); 
 	            
+                
 	        }
 	        catch (ClassNotFoundException | SQLException e) 
 	        {
 	        	out.println("Couldn't load database driver: " 
 	        			  + e.getMessage());
 	        }
+	        
+	        
+	        RequestDispatcher rd=request.getRequestDispatcher("pre.html");  
+            rd.include(request, response); 
 	}
 
 }
